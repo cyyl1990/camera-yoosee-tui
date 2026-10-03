@@ -1,0 +1,48 @@
+[package]
+name = "yoosee-tui"
+version = "0.1.0"
+edition = "2021"
+authors = ["bap"]
+description = "A lightweight TUI application to view and control Yoosee IP cameras"
+license = "MIT"
+repository = "https://github.com/bap/camera-yoosee-tui"
+homepage = "https://github.com/bap/camera-yoosee-tui"
+rust-version = "1.85"
+keywords = ["tui", "camera", "yoosee", "rtsp", "onvif", "surveillance"]
+categories = ["multimedia::video", "command-line-utilities"]
+
+[dependencies]
+# TUI framework
+ratatui = "0.29"
+crossterm = "0.28"
+
+# Async runtime
+tokio = { version = "1.46", features = ["full"] }
+
+# Serialization / config
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# HTTP / ONVIF SOAP
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+serde-xml-rs = "0.6"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-appender = "0.2"
+
+# Utilities
+anyhow = "1.0"
+thiserror = "2.0"
+bytes = "1.9"
+uuid = { version = "1.11", features = ["v4"] }
+url = "2.5"
+chrono = { version = "0.4", features = ["serde"] }
+
+# Config dirs
+dirs = "5.0"
+
+[dev-dependencies]
+tempfile = "3.14"

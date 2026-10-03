@@ -1,0 +1,40 @@
+# Sample camera configuration
+# Copy to ~/.config/yoosee-tui/cameras.toml
+
+# Camera 1 — Main living room
+[[cameras]]
+name = "Living Room"
+host = "192.168.1.100"
+rtsp_port = 554
+onvif_port = 5000
+username = "admin"
+# password = "your_rtsp_password"  # Will be prompted if omitted
+
+# Camera 2 — Front door
+[[cameras]]
+name = "Front Door"
+host = "192.168.1.101"
+rtsp_port = 554
+onvif_port = 5000
+username = "admin"
+
+# Camera 3 — Back garden
+[[cameras]]
+name = "Back Garden"
+host = "192.168.1.102"
+rtsp_port = 554
+onvif_port = 5000
+username = "admin"
+
+# Global settings
+[settings]
+# Default layout: "single" | "dual" | "grid"
+default_layout = "grid"
+# Snapshot directory
+snapshot_dir = "/tmp/yoosee-snapshots"
+# Recording directory
+record_dir = "/tmp/yoosee-recordings"
+# FFmpeg transport: "tcp" | "udp" | "auto"
+rtsp_transport = "auto"
+# ONVIF transport
+onvif_transport = "http"
